@@ -5,17 +5,17 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Đơn vị
+            Khuyến mãi
         </h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Quản lý</a></li>
-            <li class="breadcrumb-item"><a href="#">Đơn Vị</a></li>
+            <li class="breadcrumb-item"><a href="#">Khuyến mãi</a></li>
         </ol>
     </section>
     <section class="content">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Đơn Vị</h3>
+                <h3 class="box-title">Khuyến mãi</h3>
                 <h6 class="box-subtitle">Danh Sách</h6>
             </div>
             <!-- /.box-header -->
@@ -42,25 +42,25 @@
     <form id="addform" method="POST">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Thêm Đơn Vị</h3>
+                <h3 class="modal-title">Thêm Khuyến mãi</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
                 {{csrf_field()}}
                         <div class="form-group">
-                            <label>Tên đơn vị</label>
-                            <input name="code_promotion"  type="text" placeholder="Tên loại" class="form-control">
+                            <label>Mã khuyến mãi</label>
+                            <input name="code_promotion"  type="text" placeholder="Mã" class="form-control">
                          </div>
                          <div class="form-group">
-                            <label>Tên đơn vị</label>
-                            <input name="sale"  type="text" placeholder="Tên loại" class="form-control">
+                            <label>Giảm giá</label>
+                            <input name="sale"  type="number" placeholder="Giảm giá" class="form-control">
                          </div>
                          <div class="form-group">
-                            <label>Tên đơn vị</label>
+                            <label>Từ ngày</label>
                             <input name="from_date"  type="text" placeholder="2019-10-10" class="form-control">
                          </div>
                          <div class="form-group">
-                            <label>Tên đơn vị</label>
+                            <label>Đến hết ngày</label>
                             <input name="to_date"  type="text" placeholder="2019-10-10" class="form-control">
                          </div>
 
@@ -94,20 +94,20 @@
                     {{method_field('PUT')}}
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
-                        <label>Tên đơn vị</label>
-                        <input type="text" class="form-control" name="code_promotion" id="code_promotion" placeholder="Tên đơn vị">
+                        <label>Mã Khuyến mãi</label>
+                        <input type="text" class="form-control" name="code_promotion" id="code_promotion" placeholder="Mã Khuyến mãi">
                     </div>
                     <div class="form-group">
-                        <label>Tên đơn vị</label>
-                        <input type="text" class="form-control" name="sale" id="sale" placeholder="Tên đơn vị">
+                        <label>Giảm giá</label>
+                        <input type="number" class="form-control" name="sale" id="sale" placeholder="Giảm giá">
                     </div>
                     <div class="form-group">
-                        <label>Tên đơn vị</label>
-                        <input type="text" class="form-control" name="from_date" id="from_date" placeholder="Tên đơn vị">
+                        <label>Từ ngày</label>
+                        <input type="text" class="form-control" name="from_date" id="from_date" placeholder="Từ ngày">
                     </div>
                     <div class="form-group">
-                        <label>Tên đơn vị</label>
-                        <input type="text" class="form-control" name="to_date" id="to_date" placeholder="Tên đơn vị">
+                        <label>Đến ngày</label>
+                        <input type="text" class="form-control" name="to_date" id="to_date" placeholder="Đến ngày">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -140,7 +140,7 @@
                                     @endforeach
                             <tfoot>
                                 <tr>
-                                    <th rowspan="1 " colspan="1 ">Tên Loại</th>
+                                    <th rowspan="1 " colspan="1 "> Khuyến Mãi</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 200x;">Tương tác</th>
 
                                 </tr>
