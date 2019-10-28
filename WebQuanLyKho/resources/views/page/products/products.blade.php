@@ -1,7 +1,7 @@
 
     @extends('layout.master')
     @section('content_products')
-    
+
 
         <div class="content-wrapper">
             <section class="content-header">
@@ -34,7 +34,7 @@
                                             <span style="font-size: 20px;">
                                                 <i class="mdi mdi-file-excel"></i>
                                             </span>
-                                       
+
                                        </button>
                                      <!-- button export excel -->
 

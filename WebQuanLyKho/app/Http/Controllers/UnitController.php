@@ -20,7 +20,7 @@ class UnitController extends Controller
     {
         $Unit = Unit::all();
         return view('page.unit.unit')->with('unit',$Unit);
-        
+
     }
     // public function unit_list()
     // {
@@ -51,7 +51,7 @@ class UnitController extends Controller
         $Units->name_unit = $request->input('name_unit');
         $Units->acronym = $request->input('acronym');
         $Units->save();
-       
+
     }
 
     /**
@@ -74,7 +74,7 @@ class UnitController extends Controller
     public function edit(Unit $id_unit)
     {
         $Units = Unit::find($id_unit)->firt();
-        return view('page.unit.unit')->with('unit',$Unit);
+        return view('page.unit.unit')->with('unit',$Units);
     }
 
     /**
@@ -105,10 +105,10 @@ class UnitController extends Controller
         $Units->delete();
         return redirect('unit');
     }
-    
+
     // IM EX SEARCH
 
-    
+
     public function export_unit()
     {
         return Excel::download(new UnitsExport(), 'unit.xlsx');
