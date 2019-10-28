@@ -1,0 +1,14 @@
+diff a/WebQuanLyKho/app/Http/Controllers/PromotionController.php b/WebQuanLyKho/app/Http/Controllers/PromotionController.php	(rejected hunks)
+@@ -102,10 +102,10 @@
+         $Promotion->delete();
+         return redirect('promotion');
+     }
+-    
++
+     // IM EX SEARCH
+ 
+-    
++
+     public function export_promotion()
+     {
+         return Excel::download(new PromotionsExport(), 'promotion.xlsx');
