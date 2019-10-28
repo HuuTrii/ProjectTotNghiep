@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Exports\VendorExport;
-use App\Imports\VendorImport;
+use App\Exports\VendorsExport;
+use App\Imports\VendorsImport;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class VendorController extends Controller
 {
@@ -40,14 +40,12 @@ class VendorController extends Controller
     public function store(Request $request)
     {
         $Vendors= new Vendor;
-
-
         $Vendors->name_vendor = $request->input('name_vendor');
         $Vendors->phone_number = $request->input('phone_number');
         $Vendors->email = $request->input('email');
         $Vendors->adress = $request->input('adress');
         $Vendors->save();
-      
+
     }
 
     /**
@@ -69,7 +67,7 @@ class VendorController extends Controller
      */
     public function edit(Vendor $id_vendor)
     {
-        
+
         $Vendors = Vendor::find($id_vendor)->first();
 
         return view('page.vendor.vendor')->with('vendor', $Vendors);
@@ -90,7 +88,7 @@ class VendorController extends Controller
         $Vendors->email = $request->input('email');
         $Vendors->adress = $request->input('adress');
         $Vendors->save();
-      
+
     }
 
     /**
@@ -99,37 +97,35 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vendor $id)
+    public function destroy( $id)
     {
         $Vendors = Vendor::find($id);
         $Vendors->delete();
         return redirect('vendor');
     }
 
-    
+
     // IM EX SEARCH
 
-    
-    public function export_vendor()
-    {
-        return Excel::download(new VendorsExport(), 'vendor.xlsx');
-    }
-
-    public function import_vendor(Request $request)
-    {
-        Excel::import(new VendorsImport(), $request->file('file_import'));
-        return back();
-    }
     public function search_vendor(Request $request)
     {
 //            $search = $request->post('search');
 //            $Emp1 = DB::table('employees')->where('name', 'like','%'.$search.'%');
 //            return view('DisplayEmployees',['emp2' =>$Emp1]);
-        $vendor = DB::table('vendors')->where('name_vendor', 'like', '%' . $request->search . '%') 
+        $vendor = DB::table('vendors')->where('name_vendor', 'like', '%' . $request->search . '%')
         ->orwhere('phone_number', 'like', '%' . $request->search . '%')
         ->orwhere('email', 'like', '%' . $request->search . '%')
         ->orwhere('adress', 'like', '%' . $request->search . '%')
         ->get();
         return view('page.vendor.vendor',compact('vendor'));
+    }
+    public function export()
+    {
+        return Excel::download(new VendorsExport(), 'Vendor.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new VendorsImport(), $request->file('file_import'));
+        return back();
+
     }
 }
