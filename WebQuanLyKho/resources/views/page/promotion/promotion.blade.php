@@ -27,6 +27,15 @@
                                    <span style="font-size: 35px;padding: 0px;line-height: 30px;">+</span>
                             </button>
                          <!-- botton add -->
+                        <a href="promotion/export"><button type="button" class="btn btn-success"  style="height: 30px;padding: 0;border-radius: 6px;">
+                                <span style="font-size: 35px;padding: 0px;line-height: 30px;">&#8595;</span>
+                            </button></a>
+                        <!-- botton add -->
+                        <form action="{{route('importPromotion')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="file_import" class="form-control">
+                            <button class="btn btn-success">Import</button>
+                        </form>
 <!-- modal add promotion -->
 <div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -154,7 +163,7 @@
             serverSide: true,
             ajax: '{{asset('datatable/list')}}',
             columns: [
-             
+
 
 
             ]

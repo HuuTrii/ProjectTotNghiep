@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Exports\PromotionExport;
-use App\Imports\PromotionImport;
+use App\Exports\PromotionsExport;
+use App\Imports\PromotionsImport;
 use App\Models\Promotion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +20,7 @@ class PromotionController extends Controller
     {
         $Promotion = Promotion::all();
         return view('page.promotion.promotion')->with('promotion',$Promotion);
-        
+
     }
 
     /**
@@ -102,10 +102,10 @@ class PromotionController extends Controller
         $Promotion->delete();
         return redirect('promotion');
     }
-    
+
     // IM EX SEARCH
 
-    
+
     public function export_promotion()
     {
         return Excel::download(new PromotionsExport(), 'promotion.xlsx');
@@ -118,11 +118,21 @@ class PromotionController extends Controller
     }
     public function search_promotion(Request $request)
     {
-        $promotion = DB::table('promotions')->where('code_promotion', 'like', '%' . $request->search . '%') 
+        $promotion = DB::table('promotions')->where('code_promotion', 'like', '%' . $request->search . '%')
         ->orwhere('sale', 'like', '%' . $request->search . '%')
         ->orwhere('from_date', 'like', '%' . $request->search . '%')
         ->orwhere('to_date', 'like', '%' . $request->search . '%')
           ->get();
         return view('page.promotion.promotion',compact('promotion'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new PromotionsExport(), 'Promotion.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new PromotionsImport(), $request->file('file_import'));
+        return back();
+
     }
 }
