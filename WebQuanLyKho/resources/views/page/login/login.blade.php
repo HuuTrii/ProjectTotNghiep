@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('img/favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/favicon//favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/favicon/favicon-16x16')}}">
+    <link rel="manifest" href="{{asset('img/favicon/site.webmanifest')}}">
+    <link rel="mask-icon" href="{{asset('img/favicon/safari-pinned-tab.svg')}}" color="#5bbad5">
+    <!-- jQuery 3 -->
+    <script src="{{asset('assets/vendor_components/jquery/dist/jquery.js')}}"></script>
+
+    <title>CloudStock | Login</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap/dist/css/bootstrap.css')}}">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="{{asset('css/main/bootstrap-extend.css')}}">
+    
+
+    <!-- rickshaw-->
+    <link href="{{asset('assets/vendor_components/rickshaw-master/rickshaw.min.css')}}" rel="stylesheet" type="text/css" />
+    
+
+    <!-- Vector CSS -->
+    <link href="{{asset('assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
+    
+
+    <!-- Morris charts -->
+    <link rel="stylesheet" href="{{asset('css/main/master_style.css')}}">
+  
+    <!-- theme style -->
+
+    <!-- Lion_admin skins -->
+    <!-- <link rel="stylesheet" href="../../../../public/css/main/skins/_all-skins.css"> -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+
+<body class="hold-transition bg-img" style="background: url({{asset('img/7-1.jpg')}});" data-overlay="4">
+
+    <div class="container h-p100">
+        
+        <div class="row align-items-center justify-content-md-center h-p100">
+
+            <div class="col-lg-8 col-md-11 col-12">
+                <div class="row align-items-center justify-content-md-center h-p100" data-overlay-light="9">
+                    <div class="col-lg-5 col-md-6 col-12">
+                        <div class="p-40 text-center content-bottom">
+                            <img src="{{asset('img/logo.svg')}}" alt="" style="padding-left: 10%;" width="80%">
+                            <div class="text-center">
+                                <p class="mt-20">Đăng nhập với</p>
+                                <p class="gap-items-2 mb-0">
+                                     <p class="gap-items-2 mb-0">
+                                    <a class="btn btn-social-icon btn-outline btn-circle btn-facebook" href="#"><i style="margin-top: 22%;" class="fab fa-facebook-square"></i></a>
+                                    <a class="btn btn-social-icon btn-outline btn-circle btn-twitter" href="#"><i style="margin-top: 22%;" class="fab fa-twitter-square"></i></a>
+                                    <a class="btn btn-social-icon btn-outline btn-circle btn-google" href="#"><i  style="margin-top: 22%;" class="fab fa-google-plus-square"></i></a>
+                                </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-12">
+                        <div class="p-20 content-bottom">
+                            <div class="content-top-agile">
+                                <h2>Đăng nhập</h2>
+                                <p class="text-fade">Đăng nhập để truy cập quyền của bạn</p>
+                            </div>
+                            <form action="../../index.html" method="post">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Tên đăng nhập">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-danger border-danger"><i class="ti-user"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Mật khẩu">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-danger border-danger"><i class="ti-lock"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="basic_checkbox_1">
+                                            <label for="basic_checkbox_1">Nhớ tài khoản</label>
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-6">
+                                        <div class="fog-pwd text-right">
+                                            <a href="javascript:void(0)"><i class="ion ion-locked"></i> Quên mật khẩu</a><br>
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="row col-12">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-6 text-center">
+                                            <button type="submit" class="btn btn-danger btn-block margin-top-10">ĐĂNG NHẬP</button>
+                                        </div>
+                                        <div class="col-md-3"></div>
+
+                                    </div>
+
+                                    
+                                    
+
+                                    <!-- /.col -->
+                                </div>
+                            </form>
+
+                            <div class="text-center">
+                                <p class="mb-0 mt-10">Bạn chưa có tài khoản?<a href="register" class="text-info ml-5">Đăng Kí</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- /.login-box -->
+
+    <script src="{{asset('js/all.js')}}"></script>
+    <!-- jQuery 3 -->
+    <script src="{{asset('assets/vendor_components/jquery/dist/jquery.min.js')}}"></script>
+
+    <!-- popper -->
+    <script src="{{asset('assets/vendor_components/popper/dist/popper.min.js')}}"></script>
+
+    <!-- Bootstrap 4.0-->
+    <script src="{{asset('assets/vendor_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+
+</body>
+
+</html>

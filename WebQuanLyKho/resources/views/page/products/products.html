@@ -1,0 +1,568 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+    <!-- jQuery 3 -->
+    <script src="../../../../public/assets/vendor_components/jquery/dist/jquery.js"></script>
+
+    <title>Lion Admin - Dashboard</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../../../public/assets/vendor_components/bootstrap/dist/css/bootstrap.css">
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="../../../../public/css/main/bootstrap-extend.css">
+
+    <!-- rickshaw-->
+    <link href="../../../../public/assets/vendor_components/rickshaw-master/rickshaw.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Vector CSS -->
+    <link href="../../../../public/assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+
+    <!-- Morris charts -->
+    <link rel="stylesheet" href="../../../assets/vendor_components/morris.js/morris.css">
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="../../../../public/css/main/master_style.css">
+    <!-- Lion_admin skins -->
+    <!-- <link rel="stylesheet" href="../../../../public/css/main/skins/_all-skins.css"> -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+
+<div className="wrapper" style={{overflowY: 'hidden'}}>
+  <header className="main-header">
+    {/* Logo */}
+    <a href="index.html" className="logo">
+      {/* mini logo for sidebar mini 50x50 pixels */}
+      <b className="logo-mini">
+        <span className="darks\-logo"><img src="../images/logo-dark.png" alt="logo" /></span>
+      </b>
+      {/* logo for regular state and mobile devices */}
+      <span className="logo-lg">
+        <img src="../images/logo-light-text.png" alt="logo" className="light-logo" />
+        <img src="../images/logo-dark-text.png" alt="logo" className="dark-logo" />
+      </span>
+    </a>
+    {/* Header Navbar */}
+    <nav className="navbar navbar-static-top">
+      {/* Sidebar toggle button*/}
+      <a href="#" className="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span className="sr-only">Toggle navigation</span>
+      </a>
+      <div className="navbar-custom-menu">
+        <ul className="nav navbar-nav">
+          <li className="search-box">
+            <a className="nav-link hidden-sm-down" href="javascript:void(0)"><i className="mdi mdi-magnify" /></a>
+            <form className="app-search" style={{display: 'none'}}>
+              <input type="text" className="form-control" placeholder="Search & enter" /> <a className="srh-btn"><i className="ti-close" /></a>
+            </form>
+          </li>
+          {/* Messages */}
+          <li className="dropdown messages-menu">
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+              <i className="mdi mdi-email" />
+            </a>
+            <ul className="dropdown-menu scale-up">
+              <li className="header">You have 5 messages</li>
+              <li>
+                {/* inner menu: contains the actual data */}
+                <ul className="menu inner-content-div">
+                  <li>
+                    {/* start message */}
+                    <a href="#">
+                      <div className="pull-left">
+                        <img src="../images/user2-160x160.jpg" className="rounded-circle" alt="User Image" />
+                      </div>
+                      <div className="mail-contnet">
+                        <h4>
+                          Lorem Ipsum
+                          <small><i className="fa fa-clock-o" /> 15 mins</small>
+                        </h4>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end message */}
+                  <li>
+                    <a href="#">
+                      <div className="pull-left">
+                        <img src="../images/user3-128x128.jpg" className="rounded-circle" alt="User Image" />
+                      </div>
+                      <div className="mail-contnet">
+                        <h4>
+                          Nullam tempor
+                          <small><i className="fa fa-clock-o" /> 4 hours</small>
+                        </h4>
+                        <span>Curabitur facilisis erat quis metus congue viverra.</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="pull-left">
+                        <img src="../images/user4-128x128.jpg" className="rounded-circle" alt="User Image" />
+                      </div>
+                      <div className="mail-contnet">
+                        <h4>
+                          Proin venenatis
+                          <small><i className="fa fa-clock-o" /> Today</small>
+                        </h4>
+                        <span>Vestibulum nec ligula nec quam sodales rutrum sed luctus.</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="pull-left">
+                        <img src="../images/user3-128x128.jpg" className="rounded-circle" alt="User Image" />
+                      </div>
+                      <div className="mail-contnet">
+                        <h4>
+                          Praesent suscipit
+                          <small><i className="fa fa-clock-o" /> Yesterday</small>
+                        </h4>
+                        <span>Curabitur quis risus aliquet, luctus arcu nec, venenatis neque.</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="pull-left">
+                        <img src="../images/user4-128x128.jpg" className="rounded-circle" alt="User Image" />
+                      </div>
+                      <div className="mail-contnet">
+                        <h4>
+                          Donec tempor
+                          <small><i className="fa fa-clock-o" /> 2 days</small>
+                        </h4>
+                        <span>Praesent vitae tellus eget nibh lacinia pretium.</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="footer"><a href="#">See all e-Mails</a></li>
+            </ul>
+          </li>
+          {/* Notifications */}
+          <li className="dropdown notifications-menu">
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+              <i className="mdi mdi-bell" />
+            </a>
+            <ul className="dropdown-menu scale-up">
+              <li className="header">You have 7 notifications</li>
+              <li>
+                {/* inner menu: contains the actual data */}
+                <ul className="menu inner-content-div">
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-users text-aqua" /> Curabitur id eros quis nunc suscipit blandit.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-warning text-yellow" /> Duis malesuada justo eu sapien elementum, in semper diam posuere.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-users text-red" /> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-shopping-cart text-green" /> In gravida mauris et nisi
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-user text-red" /> Praesent eu lacus in libero dictum fermentum.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-user text-red" /> Nunc fringilla lorem
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="fa fa-user text-red" /> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          {/* Tasks */}
+          <li className="dropdown tasks-menu">
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+              <i className="mdi mdi-message" />
+            </a>
+            <ul className="dropdown-menu scale-up">
+              <li className="header">You have 6 tasks</li>
+              <li>
+                {/* inner menu: contains the actual data */}
+                <ul className="menu inner-content-div">
+                  <li>
+                    {/* Task item */}
+                    <a href="#">
+                      <h3>
+                        Lorem ipsum dolor sit amet
+                        <small className="pull-right">30%</small>
+                      </h3>
+                      <div className="progress xs">
+                        <div className="progress-bar progress-bar-aqua" style={{width: '30%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                          <span className="sr-only">30% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end task item */}
+                  <li>
+                    {/* Task item */}
+                    <a href="#">
+                      <h3>
+                        Vestibulum nec ligula
+                        <small className="pull-right">20%</small>
+                      </h3>
+                      <div className="progress xs">
+                        <div className="progress-bar progress-bar-danger" style={{width: '20%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                          <span className="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end task item */}
+                  <li>
+                    {/* Task item */}
+                    <a href="#">
+                      <h3>
+                        Donec id leo ut ipsum
+                        <small className="pull-right">70%</small>
+                      </h3>
+                      <div className="progress xs">
+                        <div className="progress-bar progress-bar-light-blue" style={{width: '70%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                          <span className="sr-only">70% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end task item */}
+                  <li>
+                    {/* Task item */}
+                    <a href="#">
+                      <h3>
+                        Praesent vitae tellus
+                        <small className="pull-right">40%</small>
+                      </h3>
+                      <div className="progress xs">
+                        <div className="progress-bar progress-bar-yellow" style={{width: '40%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                          <span className="sr-only">40% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end task item */}
+                  <li>
+                    {/* Task item */}
+                    <a href="#">
+                      <h3>
+                        Nam varius sapien
+                        <small className="pull-right">80%</small>
+                      </h3>
+                      <div className="progress xs">
+                        <div className="progress-bar progress-bar-red" style={{width: '80%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                          <span className="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end task item */}
+                  <li>
+                    {/* Task item */}
+                    <a href="#">
+                      <h3>
+                        Nunc fringilla
+                        <small className="pull-right">90%</small>
+                      </h3>
+                      <div className="progress xs">
+                        <div className="progress-bar progress-bar-primary" style={{width: '90%'}} role="progressbar" aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}>
+                          <span className="sr-only">90% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  {/* end task item */}
+                </ul>
+              </li>
+              <li className="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          {/* User Account */}
+          <li className="dropdown user user-menu">
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+              <img src="../images/user5-128x128.jpg" className="user-image rounded-circle" alt="User Image" />
+            </a>
+            <ul className="dropdown-menu scale-up">
+              {/* User image */}
+              <li className="user-header">
+                <img src="../../../../public/img/icon.png" className="float-left rounded-circle" alt="User Image" />
+                <p>Romi Roy<small className="mb-5" />
+                  <a href="#" className="btn btn-danger btn-sm btn-rounded">View Profile</a>
+                </p>
+              </li>
+              {/* Menu Body */}
+              <li className="user-body">
+                <div className="row no-gutters">
+                  <div className="col-12 text-left">
+                    <a href="#"><i className="ion ion-person" /> My Profile</a>
+                  </div>
+                  <div className="col-12 text-left">
+                    <a href="#"><i className="ion ion-email-unread" /> Inbox</a>
+                  </div>
+                  <div className="col-12 text-left">
+                    <a href="#"><i className="ion ion-settings" /> Setting</a>
+                  </div>
+                  <div role="separator" className="divider col-12" />
+                  <div className="col-12 text-left">
+                    <a href="#"><i className="ti-settings" /> Account Setting</a>
+                  </div>
+                  <div role="separator" className="divider col-12" />
+                  <div className="col-12 text-left">
+                    <a href="#"><i className="fa fa-power-off" /> Logout</a>
+                  </div>
+                </div>
+                {/* /.row */}
+              </li>
+            </ul>
+          </li>
+          {/* Control Sidebar Toggle Button */}
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i className="fa fa-cog fa-spin" /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  {/* Left side column. contains the logo and sidebar */}
+  <aside className="main-sidebar">
+    {/* sidebar */}
+    <section className="sidebar">
+      {/* Sidebar user panel */}
+      <div className="user-panel">
+        <div className="ulogo">
+          <a href="index.html">
+            {/* logo for regular state and mobile devices */}
+            <span><b>Lion </b>Admin</span>
+          </a>
+        </div>
+        <div className="image">
+          <img src="../../../../public/img/icon.png" className="rounded-circle" alt="User Image" />
+        </div>
+        <div className="info">
+          <p>Admin Template</p>
+          <a href className="link" data-toggle="tooltip" title data-original-title="Settings"><i className="ion ion-gear-b" /></a>
+          <a href className="link" data-toggle="tooltip" title data-original-title="Email"><i className="ion ion-android-mail" /></a>
+          <a href className="link" data-toggle="tooltip" title data-original-title="Logout"><i className="ion ion-power" /></a>
+        </div>
+      </div>
+      {/* sidebar menu */}
+      <ul className="sidebar-menu" data-widget="tree">
+        <li className="nav-devider" />
+        <li className="header nav-small-cap">PERSONAL</li>
+        <li className="treeview">
+          <a href="#">
+            <i className="fa fa-th" />
+            <span>Sản Phẩm</span>
+            <span className="pull-right-container">
+              <i className="fa fa-angle-right pull-right" />
+            </span>
+          </a>
+          <ul className="treeview-menu">
+            <li><a href>Sản Phẩm 1</a></li>
+            <li><a href>Sản Phẩm 2</a></li>
+            <li><a href>Sản Phẩm 3</a></li>
+            <li><a href>Sản Phẩm 4</a></li>
+            <li><a href>Sản Phẩm 5</a></li>
+            <li><a href>Sản Phẩm 6</a></li>
+            <li><a href>Sản Phẩm 7</a></li>
+            <li><a href>Sản Phẩm 8</a></li>
+          </ul>
+        </li>
+        <li className="treeview">
+          <a href="#">
+            <i className="fa fa-th" />
+            <span>Quản lý</span>
+            <span className="pull-right-container">
+              <i className="fa fa-angle-right pull-right" />
+            </span>
+          </a>
+          <ul className="treeview-menu">
+            <li><a href>Loại sản phẩm</a></li>
+            <li><a href>Đơn vị</a></li>
+            <li><a href>Tài khoản</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </aside>
+  {/* Content Wrapper. Contains page content */}
+  <div className="content-wrapper">
+    <section className="content-header">
+      <h1>
+        Sản Phẩm
+      </h1>
+      <ol className="breadcrumb">
+        <li className="breadcrumb-item"><a href="#"><i className="fa fa-dashboard" /> Trang chủ</a></li>
+        <li className="breadcrumb-item"><a href="#">Sản phẩm</a></li>
+      </ol>
+    </section>
+    <section className="content">
+      <div className="box">
+        <div className="box-header with-border">
+          <h3 className="box-title">Sản phẩm</h3>
+          <h6 className="box-subtitle">Tổng hợp tất cả các sẩn phẩm</h6>
+        </div>
+        {/* /.box-header */}
+        <div className="box-body">
+          <div className="table-responsive">
+            <div id="example_wrapper" className="dataTables_wrapper">
+              <button type="button" className="btn btn-info" data-toggle="modal" data-target="#modal-fill">
+                Thêm Phiếu
+              </button>
+              {/* modal */}
+              <div className="modal modal-fill fade" data-backdrop="false" id="modal-fill" tabIndex={-1}>
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title">Thêm</h5>
+                    </div>
+                    <div className="modal-body">
+                      <form action>
+                        <div className="row">
+                          <div className="form-group">
+                            <label>Name</label>
+                            <div className="input-group">
+                              <div className="input-group-prepend">
+                                <div className="input-group-text">
+                                  <i className="fa fa-calendar" />
+                                </div>
+                              </div>
+                              <input type="text" className="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" className="btn btn-bold btn-pure btn-primary float-right">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="example_filter" className="dataTables_filter"><label>Search:<input type="search" className placeholder aria-controls="example" /></label></div>
+              <table id="example" className="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
+                <thead>
+                  <tr role="row">
+                    <th className="sorting_asc" tabIndex={0} aria-controls="example" rowSpan={1} colSpan={1} aria-sort="ascending" style={{width: 282}}>Mã</th>
+                    <th className="sorting" tabIndex={0} aria-controls="example" rowSpan={1} colSpan={1} style={{width: 432}}>Tên sản phẩm</th>
+                    <th className="sorting" tabIndex={0} aria-controls="example" rowSpan={1} colSpan={1} style={{width: 217}}>Loại</th>
+                    <th className="sorting" tabIndex={0} aria-controls="example" rowSpan={1} colSpan={1} style={{width: 122}}>Đơn vị tính</th>
+                    <th className="sorting " tabIndex={0 } aria-controls="example " rowSpan={1 } colSpan={1 } style={{width: 203}}>Đơn giá</th>
+                    <th className="sorting " tabIndex={0 } aria-controls="example " rowSpan={1 } colSpan={1 } style={{width: 161}}>Trạng thái</th>
+                    <th className="sorting " tabIndex={0 } aria-controls="example " rowSpan={1 } colSpan={1 } style={{width: 161}}>Số lượng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr role="row " className="odd ">
+                    <td className="sorting_1 ">TR001</td>
+                    <td>Trứng gà</td>
+                    <td>Thực phẩm</td>
+                    <td>Cái</td>
+                    <td>6.000đ</td>
+                    <td>Còn hàng</td>
+                    <td>15</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th rowSpan={1 } colSpan={1 }>Mã</th>
+                    <th rowSpan={1 } colSpan={1 }>Tên sản phẩm</th>
+                    <th rowSpan={1 } colSpan={1 }>Loại</th>
+                    <th rowSpan={1 } colSpan={1 }>Đơn vị tính</th>
+                    <th rowSpan={1 } colSpan={1 }>Đơn giá</th>
+                    <th rowSpan={1 } colSpan={1 }>Trạng thái</th>
+                    <th rowSpan={1 } colSpan={1 }>Số lượng</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+        {/* /.box-body */}
+      </div>
+    </section>
+  </div>
+  {/* /.content-wrapper */}
+  <footer className="main-footer ">
+    <div className="pull-right d-none d-sm-inline-block ">
+      <ul className="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end ">
+      </ul>
+    </div>
+  </footer>
+  {/* Control Sidebar */}
+  {/* /.control-sidebar */}
+  {/* Add the sidebar's background. This div must be placed immediately after the control sidebar */}
+  <div className="control-sidebar-bg " />
+</div>
+{/* ./wrapper */}
+{/* jQuery UI 1.11.4 */}
+{/* Resolve conflict in jQuery UI tooltip with Bootstrap tooltip */}
+{/* popper */}
+{/* Bootstrap 4.0*/}
+{/* Sparkline */}
+{/* Vector map JavaScript */}
+{/* CHARTS js */}
+{/* FLOT CHARTS */}
+{/* FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized */}
+{/* rickshaw */}
+{/* data table */}
+{/* Morris.js charts */}
+{/* Slimscroll */}
+{/* FastClick */}
+{/* peity */}
+{/* Lion_admin App */}
+{/* Lion_admin dashboard demo (This is only for demo purposes) */}
+{/* Lion_admin for demo purposes */}
+
+
+</html>
+
+</html>
+<!-- Lion_admin for demo purposes -->
+<script src="../../../../public/js/main/demo.js "></script>
+
+
+</body>
+
+</html>
+
+</html>

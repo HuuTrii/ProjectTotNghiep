@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+    <!-- jQuery 3 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../../../public/assets/vendor_components/jquery/dist/jquery.js"></script>
+
+    <title>Lion Admin - Dashboard</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="../../../../public/assets/vendor_components/bootstrap/dist/css/bootstrap.css">
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="../../../../public/css/main/bootstrap-extend.css">
+
+    <!-- rickshaw-->
+    <link href="../../../../public/assets/vendor_components/rickshaw-master/rickshaw.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Vector CSS -->
+    <link href="../../../../public/assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+
+    <!-- Morris charts -->
+    <link rel="stylesheet" href="../../../assets/vendor_components/morris.js/morris.css">
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="../../../../public/css/main/master_style.css">
+</head>
+
+<body class="hold-transition skin-black sidebar-mini">
+
+    <div class="wrapper" style="overflow-y: hidden;">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <b class="logo-mini">
+		  <span class="darks\-logo"><img src="../images/logo-dark.png" alt="logo"></span>
+	           </b>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+		  <img src="../images/logo-light-text.png" alt="logo" class="light-logo">
+	  	  <img src="../images/logo-dark-text.png" alt="logo" class="dark-logo">
+	       </span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <li class="search-box">
+                            <a class="nav-link hidden-sm-down" href="javascript:void(0)"><i class="mdi mdi-magnify"></i></a>
+                            <form class="app-search" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+
+                        <!-- Messages -->
+
+                        <!-- Notifications -->
+
+                        <!-- Tasks -->
+
+                        <!-- User Account -->
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-cog fa-spin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="ulogo">
+                        <a href="index.html">
+                            <!-- logo for regular state and mobile devices -->
+                            <span><b>Swarehouse </b>Admin</span>
+                        </a>
+                    </div>
+                    <div class="image">
+                        <img src="../../../../public/img/icon.png" class="rounded-circle" alt="User Image">
+                    </div>
+
+                    <div class="info">
+                        <p>Minh Hiếu</p>
+                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
+                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ion ion-android-mail"></i></a>
+                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
+                    </div>
+                </div>
+                <!-- sidebar menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="nav-devider"></li>
+                    <li class="header nav-small-cap">PERSONAL</li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>Sản Phẩm</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="">Sản Phẩm 1</a></li>
+                            <li><a href="">Sản Phẩm 2</a></li>
+                            <li><a href="">Sản Phẩm 3</a></li>
+                            <li><a href="">Sản Phẩm 4</a></li>
+                            <li><a href="">Sản Phẩm 5</a></li>
+                            <li><a href="">Sản Phẩm 6</a></li>
+                            <li><a href="">Sản Phẩm 7</a></li>
+                            <li><a href="">Sản Phẩm 8</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>Quản lý</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="">Loại sản phẩm</a></li>
+                            <li><a href="">Đơn vị</a></li>
+                            <li><a href="">Tài khoản</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    Sản Phẩm
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Loại sản phẩm</a></li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Loại sản phẩm</h3>
+                        <h6 class="box-subtitle">Tổng hợp tất cả các loại sẩn phẩm</h6>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <div id="example_wrapper" class="dataTables_wrapper">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-fill">
+                                    Thêm Loại sản phẩm
+                                </button>
+                                <!-- modal -->
+                                <div class="modal modal-fill fade" data-backdrop="false" id="modal-fill" tabindex="-1">
+                                    <div class="container modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title">PHIẾU NHẬP KHO</h1>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- <form action=""> -->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label style="margin-left: 3%;">Ngày nhập kho</label>
+                                                            <input type="text" class="form-control" id="date-time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label style="margin-left: 3%;">Mã Phiếu nhập</label>
+                                                            <input type="text" class="form-control" id="ssn">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label style="padding: 1% 1%;">Nhà cung cấp</label>
+                                                            <select class="form-control select2 w-p100 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                                                <option selected="selected">Chọn nhà cung cấp</option>
+                                                                <option>Coca-Cola</option>
+                                                                <option>Pepsi</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <h3 style="padding: 15px;padding-bottom: 0;">Sản phẩm</h3>
+                                                    <span id="add_product" class="label label-success" style="height: 17px;margin-top: 32px;">Thêm</span>
+                                                </div>
+                                                <div class="product_row">
+                                                    <div class="product_inline">
+                                                        <strong>1.</strong> <span class="label label-danger delete_product"><i class="fa fa-trash"></i></span>
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <H6 style="padding: 4% 7%;">Mã Sản phẩm</h6>
+                                                                <input type="text" class="form-control" id="ssn">
+                                                            </div>
+                                                            <div class="col-md-5">
+                                                                <h6 style="padding: 1.5% 2%;">Tên</h6>
+                                                                <input type="text" class="form-control" id="ssn">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <h6 style="padding: 10% 13%;">Số lượng</h6>
+                                                                <input type="text" class="form-control" id="ssn">
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <h6 style="padding: 4.1% 6%;">Đơn giá</h6>
+                                                                <input type="text" class="form-control" id="ssn">
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                <h6 style="padding: 4.1% 5%;">Thành tiền</h6>
+                                                                <input type="text" class="form-control" id="ssn">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- </form> -->
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                                                <button type="button" class="btn btn-bold btn-pure btn-primary float-right">Nhập Mới</button>
+                                                <button type="button" class="btn btn-bold btn-pure btn-success float-right">Nhập phiếu</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="example_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label></div>
+                                <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 400px;">Mã Loại</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 600px;">Tên Loại</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 200x;">Tương tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr role="row " class="odd ">
+                                            <td class="sorting_1 ">TR001</td>
+                                            <td>Thực phẩm</td>
+                                            <td>
+                                                <span class="badge badge-danger" style="padding: 1% 5%;"><i class="fa fa-trash"></i></span>
+                                                <span class="badge badge-success" style="padding: 1% 5%;"><i class="fa fa-edit "></i></span>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th rowspan="1 " colspan="1 ">Mã Loại</th>
+                                            <th rowspan="1 " colspan="1 ">Tên Loại</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 200x;">Tương tác</th>
+
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </section>
+        </div>
+
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer ">
+            <div class="pull-right d-none d-sm-inline-block ">
+                <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end ">
+
+
+                </ul>
+            </div>
+
+        </footer>
+
+        <!-- Control Sidebar -->
+
+        <!-- /.control-sidebar -->
+
+        <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+        <div class="control-sidebar-bg "></div>
+
+    </div>
+    <!-- ./wrapper -->
+
+
+
+
+
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../../../../public/assets/vendor_components/jquery-ui/jquery-ui.js "></script>
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+    <!-- popper -->
+    <script src="../../../../public/assets/vendor_components/popper/dist/popper.min.js "></script>
+
+    <!-- Bootstrap 4.0-->
+    <script src="../../../../public/assets/vendor_components/bootstrap/dist/js/bootstrap.js "></script>
+
+    <!-- Sparkline -->
+    <script src="../../../../public/assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.js "></script>
+
+    <!-- Vector map JavaScript -->
+    <script src="../../../../public/assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.min.js "></script>
+    <script src="../../../../public/assets/vendor_components/jvectormap/lib2/jquery-jvectormap-world-mill-en.js "></script>
+
+    <!-- CHARTS js -->
+    <script src="../../../../public/assets/vendor_components/chart.js-master/Chart.min.js "></script>
+
+    <!-- FLOT CHARTS -->
+    <script src="../../../../public/assets/vendor_components/Flot/jquery.flot.js "></script>
+
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script src="../../../../public/assets/vendor_components/Flot/jquery.flot.resize.js "></script>
+    <!-- rickshaw -->
+    <script src="../../../../public/assets/vendor_components/rickshaw-master/vendor/d3.v3.js " type="text/javascript "></script>
+    <script src="../../../../public/assets/vendor_components/rickshaw-master/rickshaw.min.js "></script>
+    <!-- data table -->
+    <script src="../../../../public/assets/vendor_components/datatables.net/js/jquery.dataTables.min.js "></script>
+    <script src="../../../../public/assets/vendor_components/datatables.net-bs/js/dataTables.bootstrap.min.js "></script>
+    <script src="../../../../public/assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/dataTables.buttons.min.js "></script>
+    <script src="../../../../public/assets/vendor_plugins/DataTables-1.10.15/media/js/jquery.dataTables.min.js "></script>
+    <!-- Morris.js charts -->
+    <script src="../../../../public/assets/vendor_components/raphael/raphael.min.js "></script>
+    <script src="../../../../public/assets/vendor_components/morris.js/morris.min.js "></script>
+
+    <!-- Slimscroll -->
+    <script src="../../../../public/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js "></script>
+
+    <!-- FastClick -->
+    <script src="../../../../public/assets/vendor_components/fastclick/lib/fastclick.js "></script>
+
+    <!-- peity -->
+    <script src="../../../../public/assets/vendor_components/jquery.peity/jquery.peity.js "></script>
+    <!-- Lion_admin App -->
+    <script src="../../../../public/js/main/template.js "></script>
+
+    <!-- Lion_admin dashboard demo (This is only for demo purposes) -->
+    <script src="../../../../public/js/main/pages/dashboard.js "></script>
+
+    <!-- Lion_admin for demo purposes -->
+    <script src="../../../../public/js/main/demo.js "></script>
+    <script src="../../../../public/js/main/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#add_product').click(function() {
+                $('.product_row').append(
+                    ' <div class="product_inline"><strong>1.</strong> <span class="label label-danger delete_product"><i class="fa fa-trash"></i></span><div class="row"><div class="col-md-2"><H6 style="padding: 4% 7%;">Mã Sản phẩm</h6><input type="text" class="form-control" id="ssn"></div><div class="col-md-5"><h6 style="padding: 1.5% 2%;">Tên</h6><input type="text" class="form-control" id="ssn"> </div><div class="col-md-1"><h6 style="padding: 10% 13%;">Số lượng</h6><input type="text" class="form-control" id="ssn"> </div><div class="col-md-2"><h6 style="padding: 4.1% 6%;">Đơn giá</h6><input type="text" class="form-control" id="ssn"></div><div class="col-md-2"><h6 style="padding: 4.1% 5%;">Thành tiền</h6><input type="text" class="form-control" id="ssn"></div></div></div> '
+                    );
+            });
+            $('.delete_product').click(function() {
+                $(this).closest(".product_inline").remove();
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+</html>
+<!-- Lion_admin for demo purposes -->
+<script src="../../../../public/js/main/demo.js "></script>
+
+
+</body>
+
+</html>
+
+</html>
