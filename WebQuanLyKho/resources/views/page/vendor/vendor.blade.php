@@ -27,6 +27,15 @@
                                    <span style="font-size: 35px;padding: 0px;line-height: 30px;">+</span>
                             </button>
                          <!-- botton add -->
+                        <a href="vendor/export"><button type="button" class="btn btn-success"  style="height: 30px;padding: 0;border-radius: 6px;">
+                                <span style="font-size: 35px;padding: 0px;line-height: 30px;">&#8595;</span>
+                            </button></a>
+                        <!-- botton add -->
+                        <form action="{{route('importVendor')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="file_import" class="form-control">
+                            <button class="btn btn-success">Import</button>
+                        </form>
 <!-- modal add vendor -->
 <div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -113,18 +122,18 @@
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 10%;">Mã</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Tên Nhà Cung Cấp</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Địa Chỉ</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Email</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Điện Thoại</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Email</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Địa Chỉ</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 30%;">Tương tác</th>
                                 </tr>
                                  @foreach($vendor as $vendor1)
                                         <tr role="row " class="odd ">
                                             <td>{{$vendor1->id_vendor}}</td>
                                             <td>{{$vendor1->name_vendor}}</td>
-                                            <td>{{$vendor1->adress}}</td>
-                                            <td>{{$vendor1->email}}</td>
                                             <td>{{$vendor1->phone_number}}</td>
+                                            <td>{{$vendor1->email}}</td>
+                                            <td>{{$vendor1->adress}}</td>
                                             <td>
                                             <a href=" {{ route('vendorDestroy', $vendor1->id_vendor )}}">  <span class="badge badge-danger" style="padding: 1% 5%;"><i class="fa fa-trash"></i></span></a>
                                             <a href="#" class="editbtn"> <span  class="badge badge-success  " style="padding: 1% 5%;"><i class="fa fa-edit "></i></span></a>

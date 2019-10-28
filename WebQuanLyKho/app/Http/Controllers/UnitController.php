@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Exports\UnitExport;
-use App\Imports\UnitImport;
+use App\Exports\UnitsExport;
+use App\Imports\UnitsImport;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -123,5 +123,14 @@ class UnitController extends Controller
     {
         $unit = DB::table('units')->where('name_unit', 'like', '%' . $request->search . '%')   ->get();
         return view('page.unit.unit',compact('unit'));
+    }
+    public function export()
+    {
+        return Excel::download(new UnitsExport(), 'Unit.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new UnitsImport(), $request->file('file_import'));
+        return back();
+
     }
 }
