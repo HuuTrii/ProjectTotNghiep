@@ -61,13 +61,13 @@ Route::get('users/export','UserController@export');
 Route::post('import', 'UserController@import')->name('import');
 Route::get('search','UserController@search')->name('search');
 
-// catalog 
+// catalog
 
 
 // Route::get('insert_cata', 'CatalogController@create')->name('catalogCreate');  //  thêm mới
 // Route::post('store_cata', 'CatalogController@store')->name('catalogStore');  //  lưu
 // Route::get( 'edit_cata/{id_cata}', 'CatalogController@edit')->name('catalogEdit');  //  update
-// Route::put( 'save_cata/{id}', 'CatalogController@update')->name('catalogUpdate');  //  lưu cập nhật  
+// Route::put( 'save_cata/{id}', 'CatalogController@update')->name('catalogUpdate');  //  lưu cập nhật
 // Route::post('cataadd', 'CatalogController@them'); // store
 // Route::put('editCata/{id}','CatalogController@up'); // update
 
@@ -81,7 +81,8 @@ Route::put('editCata/{id}','CatalogController@update'); // update
 Route::get('catalog/export','CatalogController@export');
 Route::post('importCatalog','CatalogController@import')->name('importCatalog');
 
-// products 
+
+// products
 Route::get('display','UserController@index')->name('userIndex');
 Route::get('insert_pro', 'ProductController@get_catalog')->name('proCreate');
 Route::post('store', 'UserController@store')->name('userStore');
@@ -111,9 +112,11 @@ Route::post('import_unit', 'UnitController@import_unit')->name('import_unit');  
 Route::get('search_unit','UnitController@search_unit')->name('search_unit');  //  search
 Route::post('unitadd', 'UnitController@store'); // store insert
 Route::put('editUnit/{id}','UnitController@update'); // update
+Route::get('unit/export','UnitController@export');
+Route::post('importUnit','UnitController@import')->name('importUnit');
 
 
-// vendor 
+// vendor
 
 
 Route::get('vendor','VendorController@index')->name('vendorIndex');  // show
@@ -123,6 +126,8 @@ Route::post('import_vendor', 'VendorController@import_vendor')->name('import_ven
 Route::get('search_vendor','VendorController@search_vendor')->name('search_vendor');  //  search
 Route::post('vendoradd', 'VendorController@store'); // store insert
 Route::put('editVendor/{id}','VendorController@update'); // update
+Route::get('vendor/export','VendorController@export');
+Route::post('importVendor','VendorController@import')->name('importVendor');
 
 // promotion
 
@@ -134,6 +139,8 @@ Route::post('import_promotion', 'PromotionController@import_promotion')->name('i
 Route::get('search_promotion','PromotionController@search_promotion')->name('search_promotion');  //  search
 Route::post('promotion_add', 'PromotionController@store'); // store insert
 Route::put('editPromotion/{id}','PromotionController@update'); // update
+Route::get('promotion/export','UnitController@export');
+Route::post('importPromotion','UnitController@import')->name('importPromotion');
 
 
 ///
