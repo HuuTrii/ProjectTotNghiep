@@ -22,110 +22,154 @@
             <div class="box-body">
                 <div class="table-responsive">
                     <div id="example_wrapper" class="dataTables_wrapper">
-                          <!-- botton add -->
                             <button type="button" class="btn btn-app btn-success" data-toggle="modal" data-target="#modaladd" style="height: 30px;padding: 0;border-radius: 6px;">
                                    <span style="font-size: 35px;padding: 0px;line-height: 30px;">+</span>
                             </button>
-                         <!-- botton add -->
-                        <a href="vendor/export"><button type="button" class="btn btn-success"  style="height: 30px;padding: 0;border-radius: 6px;">
-                                <span style="font-size: 35px;padding: 0px;line-height: 30px;">&#8595;</span>
-                            </button></a>
-                        <!-- botton add -->
-                        <form action="{{route('importVendor')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <input type="file" name="file_import" class="form-control">
-                            <button class="btn btn-success">Import</button>
-                        </form>
-<!-- modal add vendor -->
-<div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-    <form id="addform" method="POST">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Thêm Nhà Cung Cấp</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-body">
-                {{csrf_field()}}
-                        <div class="form-group">
-                            <label>Tên Nhà Cung Cấp</label>
-                            <input name="name_vendor"  type="text" placeholder="Tên nhà cung cấp" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Địa Chỉ</label>
-                            <input name="adress"  type="text" placeholder="Địa Chỉ" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input name="email"  type="email" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Điện Thoại</label>
-                            <input name="phone_number"  type="text" placeholder="Điện thoại" class="form-control">
-                        </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
-                <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Lưu</button>
-            </div>
-        </div>
-    </form>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- modal add vendor -->
+                            <a href="catalog/export">   
+                                <button type="button" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
+                                            <span style="font-size: 20px;">
+                                                 <i class="fa fa-arrow-down"></i><i class="mdi mdi-file-excel"></i>
+                                            </span>
+                                </button>
+                            </a>
+                                <button type="button" data-toggle="modal" data-target="#modalimport" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
+                                       <span style="font-size: 20px;">
+                                                <i class="fa fa-arrow-up"></i><i class="mdi mdi-file-excel"></i>
+                                        </span>
+                                </button>
+
+                                <!-- modal import -->
+
+                                <div class="modal fade" id="modalimport" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                            <form action="{{route('importCatalog')}}" method="POST"  enctype="multipart/form-data">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3 class="modal-title">Nhập file excel</h3>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label style="font-weight: bold" >Thêm file</label>
+                                                        <input type="file" name="file_import" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                                                    <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Thêm</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                <!-- /.modal-content -->
+                                    </div>
+                                </div>
+                            <!-- modal add vendor -->
+                            <div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                <form id="addform" method="POST">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Thêm Nhà Cung Cấp</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{csrf_field()}}
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <label style="font-weight: bold" for="">Nhà cung cấp</label>
+                                                      <div class="form-group">
+                                                        <input name="name_vendor"  type="text" placeholder="Tên nhà cung cấp" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                      <div class="form-group">
+                                                        <label style="font-weight: bold" for="">Điện Thoại</label>
+                                                        <input name="phone_number"  type="text" placeholder="Điện thoại" class="form-control">
+                                                    </div>
+                                                </div>
+                                                   
+                                            </div>
+                                                  <div class="row">
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label style="font-weight: bold" for="">Địa chỉ</label>
+                                                            <input name="adress"  type="text" placeholder="Địa Chỉ" class="form-control">
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label style="font-weight: bold" for="">Email</label>
+                                                            <input name="email"  type="email" placeholder="Email" class="form-control">
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                                  
+                                                   
+                                                   
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                                            <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Lưu</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- modal add vendor -->
 
 
-<!-- Modal edit vendor -->
-<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="editform" >
-                <div class="modal-body">
-                    {{csrf_field()}}
-                    {{method_field('PUT')}}
-                    <input type="hidden" name="id" id="id">
-                    <div class="form-group">
-                        <label>Tên Nhà Cung Cấp</label>
-                        <input type="text" class="form-control" name="name_vendor" id="name_vendor" placeholder="Tên Nhà Cung Cấp">
-                    </div>
-                    <div class="form-group">
-                        <label>Địa Chỉ</label>
-                        <input type="text" class="form-control" name="adress" id="adress" placeholder="Địa Chỉ">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label>Điện Thoại</label>
-                        <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Điện thoại">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Updated</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- modal edit vendor -->
+                            <!-- Modal edit vendor -->
+                            <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document" style="max-width: 1000px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form id="editform" >
+                                            <div class="modal-body">
+                                                {{csrf_field()}}
+                                                {{method_field('PUT')}}
+                                                <input type="hidden" name="id" id="id">
+                                                <div class="form-group">
+                                                    <label>Tên Nhà Cung Cấp</label>
+                                                    <input type="text" class="form-control" name="name_vendor" id="name_vendor" placeholder="Tên Nhà Cung Cấp">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Địa Chỉ</label>
+                                                    <input type="text" class="form-control" name="adress" id="adress" placeholder="Địa Chỉ">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Điện Thoại</label>
+                                                    <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Điện thoại">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Updated</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal edit vendor -->
                         <table id="data_vendor" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
                                 <tr role="row">
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 10%;">Mã</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Tên Nhà Cung Cấp</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Điện Thoại</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Email</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Địa Chỉ</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 30%;">Tương tác</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 5%;">Mã</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên Nhà Cung Cấp</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Điện Thoại</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Email</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Địa Chỉ</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Tương tác</th>
                                 </tr>
                                  @foreach($vendor as $vendor1)
                                         <tr role="row " class="odd ">
@@ -143,9 +187,12 @@
                                     @endforeach
                             <tfoot>
                                 <tr>
-                                    <th rowspan="1 " colspan="1 ">Tên Loại</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 200x;">Tương tác</th>
-
+                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 5%;">Mã</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên Nhà Cung Cấp</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Điện Thoại</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Email</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Địa Chỉ</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Tương tác</th>
                                 </tr>
                             </tfoot>
                         </table>
