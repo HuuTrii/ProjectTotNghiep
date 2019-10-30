@@ -39,7 +39,7 @@
                                      <!-- button export excel -->
 
                                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
+                                        <div class="modal-dialog modal-lg" style="width: 1000px">
                                         <form action="">
                                             <div class="modal-content">
                                                 <div class="modal-header">
