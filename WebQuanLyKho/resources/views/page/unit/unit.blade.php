@@ -21,22 +21,52 @@
                     <div class="table-responsive">
                         <div id="example_wrapper" class="dataTables_wrapper">
                             <!-- botton add -->
-                            <button type="button" class="btn btn-app btn-success" data-toggle="modal" data-target="#modaladd" style="height: 30px;padding: 0;border-radius: 6px;">
-                                <span style="font-size: 35px;padding: 0px;line-height: 30px;">+</span>
+                             <button type="button" class="btn btn-app btn-success" data-toggle="modal" data-target="#modaladd" style="height: 30px;padding: 0;border-radius: 6px;">
+                                   <span style="font-size: 35px;padding: 0px;line-height: 30px;">+</span>
                             </button>
-                            <!-- botton add -->
-                            <a href="unit/export"><button type="button" class="btn btn-success"  style="height: 30px;padding: 0;border-radius: 6px;">
-                                    <span style="font-size: 35px;padding: 0px;line-height: 30px;">&#8595;</span>
-                                </button></a>
-                            <!-- botton add -->
-                            <form action="{{route('importUnit')}}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input type="file" name="file_import" class="form-control">
-                                <button class="btn btn-success">Import</button>
-                            </form>
+                            <a href="catalog/export">   
+                                <button type="button" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
+                                            <span style="font-size: 20px;">
+                                                 <i class="fa fa-arrow-down"></i><i class="mdi mdi-file-excel"></i>
+                                            </span>
+                                </button>
+                            </a>
+                                <button type="button" data-toggle="modal" data-target="#modalimport" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
+                                       <span style="font-size: 20px;">
+                                                <i class="fa fa-arrow-up"></i><i class="mdi mdi-file-excel"></i>
+                                        </span>
+                                </button>
+
+                                <!-- modal import -->
+
+                                <div class="modal fade" id="modalimport" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                            <form action="{{route('importCatalog')}}" method="POST"  enctype="multipart/form-data">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3 class="modal-title">Nhập file excel</h3>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label style="font-weight: bold" >Thêm file</label>
+                                                        <input type="file" name="file_import" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                                                    <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Thêm</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                <!-- /.modal-content -->
+                                    </div>
+                                </div>  
+                                <!-- modal import -->
                             <!-- modal add unit -->
                             <div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
+                                <div class="modal-dialog modal-lg" style="min-width: 1000px;">
                                     <form id="addform" method="POST">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -45,10 +75,21 @@
                                             </div>
                                             <div class="modal-body">
                                                 {{csrf_field()}}
-                                                <div class="form-group">
-                                                    <label>Tên đơn vị</label>
-                                                    <input name="name_unit" type="text" placeholder="Tên loại" class="form-control">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label>Tên đơn vị</label>
+                                                            <input name="name_unit" type="text" placeholder="Tên loại" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Tên viết tắt</label>
+                                                            <input name="name_unit" type="text" placeholder="Tên viết tắt" class="form-control">
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
@@ -65,7 +106,7 @@
 
                             <!-- Modal edit unit -->
                             <div class="modal fade bs-example-modal-lg" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
+                                <div class="modal-dialog" role="document" style="min-width: 1000px;">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
@@ -78,13 +119,23 @@
                                                 {{csrf_field()}}
                                                 {{method_field('PUT')}}
                                                 <input type="hidden" name="id" id="id">
-                                                <div class="form-group">
-                                                    <label>Tên đơn vị</label>
-                                                    <input type="text" class="form-control" name="name_unit" id="name_unit" placeholder="Tên đơn vị">
+                                                 <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label>Tên đơn vị</label>
+                                                            <input name="name_unit" type="text" placeholder="Tên loại" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Tên viết tắt</label>
+                                                            <input name="name_unit" type="text" placeholder="Tên viết tắt" class="form-control">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                                <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
                                                 <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Cập nhật</button>
                                             </div>
                                         </form>

@@ -63,7 +63,11 @@
                                         </form>
                                 <!-- /.modal-content -->
                                     </div>
-                                </div>
+                                </div>  
+                                <!-- modal import -->
+
+
+                                
                             <!-- modal add vendor -->
                             <div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -155,7 +159,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Updated</button>
+                                                <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Updated</button>
                                             </div>
                                         </form>
                                     </div>
