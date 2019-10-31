@@ -85,7 +85,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label>Tên viết tắt</label>
-                                                            <input name="name_unit" type="text" placeholder="Tên viết tắt" class="form-control">
+                                                            <input name="acronym" type="text" placeholder="Tên viết tắt" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -123,13 +123,13 @@
                                                     <div class="col-md-8">
                                                         <div class="form-group">
                                                             <label>Tên đơn vị</label>
-                                                            <input name="name_unit" type="text" placeholder="Tên loại" class="form-control">
+                                                            <input name="name_unit" type="text" id="name_unit" placeholder="Tên loại" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label>Tên viết tắt</label>
-                                                            <input name="name_unit" type="text" placeholder="Tên viết tắt" class="form-control">
+                                                            <input name="acronym" type="text" id="acronym" placeholder="Tên viết tắt" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -146,13 +146,15 @@
                             <table id="data_unit" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
                                 <thead>
                                 <tr role="row">
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 35%;">Tên Đơn vị</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 35%;">Tên viết tắt</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Mã Đơn vị</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên Đơn vị</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên viết tắt</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 30%;">Tương tác</th>
                                 </tr>
                                 </thead>
                                 @foreach($unit as $unit1)
                                     <tr role="row " class="odd ">
+                                        <td>{{$unit1->id_unit}}</td>
                                         <td>{{$unit1->name_unit}}</td>
                                         <td>{{$unit1->acronym}}</td>
                                         <td>
@@ -200,6 +202,7 @@
             console.log(data);
             $('#id').val(data[0]);
             $('#name_unit').val(data[1]);
+            $('#acronym').val(data[2]);
         });
         $(editform).on('submit', function(e) {
             e.preventDefault();

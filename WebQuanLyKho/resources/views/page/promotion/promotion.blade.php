@@ -270,7 +270,7 @@
                             e.preventDefault();
                             $.ajax({
                                 type:"POST",
-                                url:"promotion_add",
+                                url:"promotionadd",
                                 data: $('#addform').serialize(),
                                 success:function (response) {
                                     console.log(response);

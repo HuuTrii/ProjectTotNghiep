@@ -137,7 +137,7 @@ Route::get( 'delete_promotion/{id_promotion}', 'PromotionController@destroy')-> 
 Route::get('promotion/export','PromotionController@export_promotion')->name('export_promotion');  //  export
 Route::post('import_promotion', 'PromotionController@import_promotion')->name('import_promotion');  //  import
 Route::get('search_promotion','PromotionController@search_promotion')->name('search_promotion');  //  search
-Route::post('promotion_add', 'PromotionController@store'); // store insert
+Route::post('promotionadd', 'PromotionController@store'); // store insert
 Route::put('editPromotion/{id}','PromotionController@update'); // update
 Route::get('promotion/export','UnitController@export');
 Route::post('importPromotion','UnitController@import')->name('importPromotion');

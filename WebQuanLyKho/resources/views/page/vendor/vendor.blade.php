@@ -246,9 +246,9 @@
             console.log(data);
             $('#id').val(data[0]);
             $('#name_vendor').val(data[1]);
-            $('#adress').val(data[2]);
+            $('#adress').val(data[4]);
             $('#email').val(data[3]);
-            $('#phone_number').val(data[4]);
+            $('#phone_number').val(data[2]);
         });
         $(editform).on('submit',function (e) {
             e.preventDefault();

@@ -41,7 +41,7 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
-        $Promotion= new Promotin;
+        $Promotions = new Promotion;
         $Promotion->code_promotion = $request->input('code_promotion');
         $Promotion->sale = $request->input('sale');
         $Promotion->from_date = $request->input('from_date');
