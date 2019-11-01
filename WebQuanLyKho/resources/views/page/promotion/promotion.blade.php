@@ -8,15 +8,15 @@
             Đơn vị
         </h1>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Quản lý</a></li>
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-folder"></i> Quản lý</a></li>
             <li class="breadcrumb-item"><a href="#">Đơn Vị</a></li>
         </ol>
     </section>
     <section class="content">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Đơn Vị</h3>
-                <h6 class="box-subtitle">Danh Sách</h6>
+                <h3 class="box-title">Khuyến mãi</h3>
+                <h6 class="box-subtitle">Danh sách các khuyến mãi hiện có</h6>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -77,6 +77,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 {{csrf_field()}}
+
                                                 <div class="row">
                                                     <div class="col-md-8">
                                                            <div class="form-group">
@@ -86,7 +87,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                            <div class="form-group">
-                                                            <label>Mức khuyến mãi</label>
+                                                            <label>Mức khuyến mãi(%)</label>
                                                             <input name="sale"  type="text" placeholder="Tên loại" class="form-control">
                                                          </div>
                                                     </div>
@@ -124,42 +125,57 @@
 
                                     <!-- Modal edit promotion -->
                                     <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-dialog" role="document" style="min-width: 1000px">
                                             <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form id="editform" >
-                                                    <div class="modal-body">
-                                                        {{csrf_field()}}
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <form id="editform" >
+                                                             <div class="modal-body">
+                                                    {{csrf_field()}}
                                                         {{method_field('PUT')}}
-                                                        <input type="hidden" name="id" id="id">
-                                                        <div class="form-group">
-                                                            <label>Tên đơn vị</label>
-                                                            <input type="text" class="form-control" name="code_promotion" id="code_promotion" placeholder="Tên đơn vị">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                               <div class="form-group">
+                                                                <label>Mã khuyến mãi</label>
+                                                                <input name="code_promotion"  type="text" placeholder="Tên loại" class="form-control">
+                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label>Tên đơn vị</label>
-                                                            <input type="text" class="form-control" name="sale" id="sale" placeholder="Tên đơn vị">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Tên đơn vị</label>
-                                                            <input type="text" class="form-control" name="from_date" id="from_date" placeholder="Tên đơn vị">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Tên đơn vị</label>
-                                                            <input type="text" class="form-control" name="to_date" id="to_date" placeholder="Tên đơn vị">
+                                                        <div class="col-md-4">
+                                                               <div class="form-group">
+                                                                <label>Mức khuyến mãi(%)</label>
+                                                                <input name="sale"  type="text" placeholder="Tên loại" class="form-control">
+                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Updated</button>
-                                                    </div>
+                                                    <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>Từ ngày</label>
+                                                                    <input name="from_date"  type="date" placeholder="2019-10-10" class="form-control" >
+                                                                </div>
+                                                            </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Đến ngày</label>
+                                                                <input name="to_date"  type="date" placeholder="2019-10-10" class="form-control">
+                                                            </div>
+                                                        </div> 
+                                                     </div> 
+                                                          
+                                                            
+
+                                                </div>
+                                                        <div class="modal-footer" style="min-width: 1000px;">
+                                                            <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                                                            <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Cập nhật</button>
+                                                        </div>
+                                        </div>
                                                 </form>
-                                            </div>
+                                       
                                         </div>
                                     </div>
                                     <!-- modal edit promotion -->
@@ -174,7 +190,7 @@
                                  @foreach($promotion as $promotion1)
                                         <tr role="row " class="odd ">
                                             <td>{{$promotion1->code_promotion}}</td>
-                                            <td>{{$promotion1->sale}}</td>
+                                            <td>{{$promotion1->sale}}%</td>
                                             <td>{{$promotion1->from_date}}</td>
                                             <td>{{$promotion1->to_date}}</td>
                                             <td>

@@ -9,7 +9,7 @@
                     Sản Phẩm
                 </h1>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-folder"></i> Trang chủ</a></li>
                     <li class="breadcrumb-item"><a href="#">Loại sản phẩm</a></li>
                 </ol>
             </section>
@@ -105,8 +105,8 @@
                                                             <span id="add_product" class="label label-success" style="height: 17px;margin-top: 32px;">Thêm</span>
                                                         </div>
                                                         <div class="product_row">
-                                                            <div class="product_inline">
-                                                                <div class="row" style="padding: 10px 5px;"><strong style="padding-right: 6px;">1.</strong> <span style="line-height: 16px;" class="label label-danger delete_product"><i class="fa fa-trash"></i></span></div>
+                                                            <div class="product_inline" >
+                                                                <div class="row" style="padding: 10px 15px;"><strong style="padding-right: 6px;">1.</strong> <span style="line-height: 16px;" class="label label-danger delete_product"><i class="fa fa-trash"></i></span></div>
                                                                 <div class="row">
                                                                     <div class="col-md-2" style="padding: 0px 5px;">
                                                                         <H6>Mã Sản phẩm</h6>

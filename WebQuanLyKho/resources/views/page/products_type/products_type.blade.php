@@ -8,7 +8,7 @@
             Loai sản Phẩm
         </h1>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Quản lý</a></li>
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-folder"></i> Quản lý</a></li>
             <li class="breadcrumb-item"><a href="#">Loại sản phẩm</a></li>
         </ol>
     </section>
@@ -56,7 +56,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
-                                                    <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Import</button>
+                                                    <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Thêm file</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -103,7 +103,7 @@
 
                         <!-- Modal edit product_type -->
                         <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog" role="document" style="min-width: 1000px;">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
@@ -121,10 +121,10 @@
                                                 <input type="text" class="form-control" name="name_cata" id="name_cata" placeholder="Tên loại">
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Updated</button>
-                                        </div>
+                                        <div class="modal-footer" style="min-width: 1000px">
+                                        <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                                        <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Cập nhật</button>
+                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -132,13 +132,11 @@
                         <!-- modal edit product_type -->
                         <table id="data_product_type" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
                                 <tr role="row">
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 10%;">STT</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 60%;">Tên Loại</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 70%;">Tên Loại</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 30%;">Tương tác</th>
                                 </tr>
                                  @foreach($catalog as $catalog1)
                                         <tr role="row " class="odd ">
-                                            <td>{{$catalog1->id_cata}}</td>
                                             <td>{{$catalog1->name_cata}}</td>
                                             <td>
                                             <a href=" {{ route('catalogDestroy', $catalog1->id_cata )}}">  <span class="badge badge-danger" style="padding: 1% 5%;"><i class="fa fa-trash"></i></span></a>
@@ -213,10 +211,10 @@
                     console.log(response);
                     $('#editmodal').modal('hide');
                     location.reload();
-                    alert("Data Update");
+                    alert("Cập nhật thành công");
                 },
                 error:function (error) {
-                    alert("Data Not Update");
+                    alert("Cập nhật không thành công");
                 }
             });
         });
@@ -235,10 +233,10 @@
                                     console.log(response);
                                     $('#modaladd').modal('hide');
                                     location.reload();
-                                    alert("Data saved");
+                                    alert("Thêm thành công");
                                 },
         error:function (error) {
-            alert("Data Not Saved");
+            alert("Không thể thêm");
         }
     });
 });

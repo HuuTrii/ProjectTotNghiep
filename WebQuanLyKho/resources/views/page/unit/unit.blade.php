@@ -106,7 +106,7 @@
 
                             <!-- Modal edit unit -->
                             <div class="modal fade bs-example-modal-lg" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document" style="min-width: 1000px;">
+                                <div class="modal-dialog" role="document" style="max-width: 1000px;">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
@@ -134,7 +134,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
+                                            <div class="modal-footer" style="min-width: 1000px;">
                                                 <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
                                                 <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Cập nhật</button>
                                             </div>
@@ -146,7 +146,6 @@
                             <table id="data_unit" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
                                 <thead>
                                 <tr role="row">
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Mã Đơn vị</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên Đơn vị</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên viết tắt</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 30%;">Tương tác</th>
@@ -154,7 +153,6 @@
                                 </thead>
                                 @foreach($unit as $unit1)
                                     <tr role="row " class="odd ">
-                                        <td>{{$unit1->id_unit}}</td>
                                         <td>{{$unit1->name_unit}}</td>
                                         <td>{{$unit1->acronym}}</td>
                                         <td>
@@ -215,10 +213,10 @@
                     console.log(response);
                     $('#editmodal').modal('hide');
                     location.reload();
-                    alert("Data Update");
+                    alert("Cập nhật thành công");
                 },
                 error: function(error) {
-                    alert("Data Not Update");
+                    alert("Không thể cập nhật");
                 }
             });
         });
@@ -236,10 +234,10 @@
                     console.log(response);
                     $('#modaladd').modal('hide');
                     location.reload();
-                    alert("Data saved");
+                    alert("Thêm thành công");
                 },
                 error: function(error) {
-                    alert("Data Not Saved");
+                    alert("Không thể thêm");
                 }
             });
         });

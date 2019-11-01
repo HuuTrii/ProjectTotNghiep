@@ -8,7 +8,7 @@
            Nhà Cung Cấp
         </h1>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Quản lý</a></li>
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-folder"></i> Quản lý</a></li>
             <li class="breadcrumb-item"><a href="#">Nhà Cung Cấp</a></li>
         </ol>
     </section>
@@ -71,7 +71,7 @@
                             <!-- modal add vendor -->
                             <div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
-                                <form id="addform" method="POST">
+                                <form id="addform" method="POST" novalidate>
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h3 class="modal-title">Thêm Nhà Cung Cấp</h3>
@@ -89,7 +89,7 @@
                                                 <div class="col-md-5">
                                                       <div class="form-group">
                                                         <label style="font-weight: bold" for="">Điện Thoại</label>
-                                                        <input name="phone_number"  type="text" placeholder="Điện thoại" class="form-control">
+                                                        <input name="phone_number"  type="text" placeholder="Điện thoại" class="form-control" id="phone2">
                                                     </div>
                                                 </div>
                                                    
@@ -103,8 +103,11 @@
                                                       </div>
                                                       <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label style="font-weight: bold" for="">Email</label>
-                                                            <input name="email"  type="email" placeholder="Email" class="form-control">
+                                                            <div class="controls"> 
+                                                                <label style="font-weight: bold" for="">Email</label>
+                                                                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required" placeholder="Email"> 
+                                                                <div class="help-block"></div>
+                                                            </div>
                                                         </div>
                                                       </div>
                                                   </div>
@@ -148,14 +151,24 @@
                                                     <label>Địa Chỉ</label>
                                                     <input type="text" class="form-control" name="adress" id="adress" placeholder="Địa Chỉ">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                <div class="row">
+                                                    
+                                                    <div class="col-md 6"> 
+                                                            <div class="form-group">
+                                                                <label>Email</label>
+                                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md 6">
+                                                        
+                                                    <div class="form-group">
+                                                            <label>Điện Thoại</label>
+                                                            <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Điện thoại">
+                                                     </div>
+                                                    </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Điện Thoại</label>
-                                                    <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Điện thoại">
-                                                </div>
+                                               
+                                                
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -168,16 +181,14 @@
                             <!-- modal edit vendor -->
                         <table id="data_vendor" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
                                 <tr role="row">
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 5%;">Mã</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên Nhà Cung Cấp</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Điện Thoại</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Email</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Địa Chỉ</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Tương tác</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tương tác</th>
                                 </tr>
                                  @foreach($vendor as $vendor1)
                                         <tr role="row " class="odd ">
-                                            <td>{{$vendor1->id_vendor}}</td>
                                             <td>{{$vendor1->name_vendor}}</td>
                                             <td>{{$vendor1->phone_number}}</td>
                                             <td>{{$vendor1->email}}</td>
@@ -191,7 +202,6 @@
                                     @endforeach
                             <tfoot>
                                 <tr>
-                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 5%;">Mã</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 25%;">Tên Nhà Cung Cấp</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Điện Thoại</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 15%;">Email</th>
@@ -231,45 +241,45 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+                <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
 
 
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.editbtn').on('click',function () {
-            $('#editmodal').modal('show');
-            $tr = $(this).closest('tr');
-            var data = $tr.children("td").map(function () {
-                return $(this).text();
-            }).get();
-            console.log(data);
-            $('#id').val(data[0]);
-            $('#name_vendor').val(data[1]);
-            $('#adress').val(data[4]);
-            $('#email').val(data[3]);
-            $('#phone_number').val(data[2]);
-        });
-        $(editform).on('submit',function (e) {
-            e.preventDefault();
-            var id = $('#id').val();
-            $.ajax({
-                type:"PUT",
-                url:"editVendor/"+ id,
-                data: $('#editform').serialize(),
-                success:function (response) {
-                    console.log(response);
-                    $('#editmodal').modal('hide');
-                    location.reload();
-                    alert("Data Update");
-                },
-                error:function (error) {
-                    alert("Data Not Update");
-                }
-            });
-        });
-    });
-</script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('.editbtn').on('click',function () {
+                            $('#editmodal').modal('show');
+                            $tr = $(this).closest('tr');
+                            var data = $tr.children("td").map(function () {
+                                return $(this).text();
+                            }).get();
+                            console.log(data);
+                            $('#id').val(data[0]);
+                            $('#name_vendor').val(data[1]);
+                            $('#adress').val(data[4]);
+                            $('#email').val(data[3]);
+                            $('#phone_number').val(data[2]);
+                        });
+                        $(editform).on('submit',function (e) {
+                            e.preventDefault();
+                            var id = $('#id').val();
+                            $.ajax({
+                                type:"PUT",
+                                url:"editVendor/"+ id,
+                                data: $('#editform').serialize(),
+                                success:function (response) {
+                                    console.log(response);
+                                    $('#editmodal').modal('hide');
+                                    location.reload();
+                                    alert("Data Update");
+                                },
+                                error:function (error) {
+                                    alert("Data Not Update");
+                                }
+                            });
+                        });
+                    });
+                </script>
                 <script type="text/javascript">
 
                     $(document).ready(function(){
@@ -285,10 +295,10 @@
                                     location.reload();
                                     alert("Data saved");
                                 },
-        error:function (error) {
-            alert("Data Not Saved");
-        }
-    });
-});
-});
-</script>
+                        error:function (error) {
+                            alert("Data Not Saved");
+                        }
+                    });
+                });
+                });
+                </script>

@@ -96,23 +96,23 @@
                                                             <div class="product_inline">
                                                                 <div class="row" style="padding: 10px 5px;"><strong style="padding-right: 6px;">1.</strong> <span style="line-height: 16px;" class="label label-danger delete_product"><i class="fa fa-trash"></i></span></div>
                                                                 <div class="row">
-                                                                    <div class="col-md-2" style="padding: 0px 5px;">
+                                                                    <div class="col-md-2" >
                                                                         <H6>Mã Sản phẩm</h6>
                                                                         <input type="text" class="form-control" >
                                                                     </div>
-                                                                    <div class="col-md-4" style="padding: 0px 5px;">
+                                                                    <div class="col-md-4" >
                                                                         <h6>Tên</h6>
                                                                         <input type="text" class="form-control" >
                                                                     </div>
-                                                                    <div class="col-md-2" style="padding: 0px 5px;">
+                                                                    <div class="col-md-2" >
                                                                         <h6>Số lượng</h6>
                                                                         <input type="number" class="form-control" >
                                                                     </div>
-                                                                    <div class="col-md-2" style="padding: 0px 5px;">
+                                                                    <div class="col-md-2" >
                                                                         <h6>Đơn giá</h6>
                                                                         <input type="text" class="form-control" >
                                                                     </div>
-                                                                    <div class="col-md-2" style="padding: 0px 5px;">
+                                                                    <div class="col-md-2" >
                                                                         <h6>Thành tiền</h6>
                                                                         <input type="text" class="form-control" >
                                                                     </div>
