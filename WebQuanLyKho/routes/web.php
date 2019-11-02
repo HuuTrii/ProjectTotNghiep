@@ -31,7 +31,7 @@ Route::get('/login', function () {
 Route::get('register', function () {
     return view('page.register.register');
 });
-Route::get('login', function () {
+Route::get('login1', function () {
     return view('page.login.login');
 });
 
