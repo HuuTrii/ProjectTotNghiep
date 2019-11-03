@@ -153,6 +153,7 @@
                                 </thead>
                                 @foreach($unit as $unit1)
                                     <tr role="row " class="odd ">
+                                        <td style="display:none">{{$unit1->id_unit}}</td>
                                         <td>{{$unit1->name_unit}}</td>
                                         <td>{{$unit1->acronym}}</td>
                                         <td>

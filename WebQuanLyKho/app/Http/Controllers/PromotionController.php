@@ -42,11 +42,11 @@ class PromotionController extends Controller
     public function store(Request $request)
     {
         $Promotions = new Promotion;
-        $Promotion->code_promotion = $request->input('code_promotion');
-        $Promotion->sale = $request->input('sale');
-        $Promotion->from_date = $request->input('from_date');
-        $Promotion->to_date = $request->input('to_date');
-        $Promotion->save();
+        $Promotions->code_promotion = $request->input('code_promotion');
+        $Promotions->sale = $request->input('sale');
+        $Promotions->from_date = $request->input('from_date');
+        $Promotions->to_date = $request->input('to_date');
+        $Promotions->save();
     }
 
     /**
@@ -82,12 +82,12 @@ class PromotionController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        $Promotion = Promotion::find($id);
-        $Promotion->code_promotion = $request->input('code_promotion');
-        $Promotion->sale = $request->input('sale');
-        $Promotion->from_date = $request->input('from_date');
-        $Promotion->to_date = $request->input('to_date');
-        $Promotion->save();
+        $Promotions = Promotion::find($id);
+        $Promotions->code_promotion = $request->input('code_promotion');
+        $Promotions->sale = $request->input('sale');
+        $Promotions->from_date = $request->input('from_date');
+        $Promotions->to_date = $request->input('to_date');
+        $Promotions->save();
     }
 
     /**

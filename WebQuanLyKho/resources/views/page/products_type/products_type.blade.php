@@ -137,6 +137,7 @@
                                 </tr>
                                  @foreach($catalog as $catalog1)
                                         <tr role="row " class="odd ">
+                                            <td style="display:none;">{{$catalog1->id_cata}}</td>
                                             <td>{{$catalog1->name_cata}}</td>
                                             <td>
                                             <a href=" {{ route('catalogDestroy', $catalog1->id_cata )}}">  <span class="badge badge-danger" style="padding: 1% 5%;"><i class="fa fa-trash"></i></span></a>
@@ -190,6 +191,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        // $('td:nth-child(1)').hide();
         $('.editbtn').on('click',function () {
             $('#editmodal').modal('show');
             $tr = $(this).closest('tr');

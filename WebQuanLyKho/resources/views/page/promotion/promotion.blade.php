@@ -96,13 +96,13 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Từ ngày</label>
-                                                                <input name="from_date"  type="date" placeholder="2019-10-10" class="form-control">
+                                                                <input name="from_date"  type="text" placeholder="2019-10-10" class="form-control">
                                                             </div>
                                                         </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Đến ngày</label>
-                                                            <input name="to_date"  type="date" placeholder="2019-10-10" class="form-control">
+                                                            <input name="to_date"  type="text" placeholder="2019-10-10" class="form-control">
                                                         </div>
                                                     </div> 
                                                  </div> 
@@ -134,20 +134,21 @@
                                                         </button>
                                                     </div>
                                                     <form id="editform" >
-                                                             <div class="modal-body">
+                                                    <div class="modal-body">
                                                     {{csrf_field()}}
-                                                        {{method_field('PUT')}}
+                                                    {{method_field('PUT')}}
+                                                    <input type="hidden" name="id" id="id">
                                                     <div class="row">
                                                         <div class="col-md-8">
                                                                <div class="form-group">
                                                                 <label>Mã khuyến mãi</label>
-                                                                <input name="code_promotion"  type="text" placeholder="Tên loại" class="form-control">
+                                                                <input name="code_promotion" id="code_promotion"  type="text" placeholder="Tên loại" class="form-control">
                                                              </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                                <div class="form-group">
                                                                 <label>Mức khuyến mãi(%)</label>
-                                                                <input name="sale"  type="text" placeholder="Tên loại" class="form-control">
+                                                                <input name="sale" id="sale"  type="text" placeholder="Tên loại" class="form-control">
                                                              </div>
                                                         </div>
                                                     </div>
@@ -155,13 +156,13 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Từ ngày</label>
-                                                                    <input name="from_date"  type="date" placeholder="2019-10-10" class="form-control" >
+                                                                    <input name="from_date" id="from_date" type="text" placeholder="2019-10-10" class="form-control" >
                                                                 </div>
                                                             </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Đến ngày</label>
-                                                                <input name="to_date"  type="date" placeholder="2019-10-10" class="form-control">
+                                                                <input name="to_date" id="to_date"  type="text" placeholder="2019-10-10" class="form-control">
                                                             </div>
                                                         </div> 
                                                      </div> 
@@ -189,8 +190,9 @@
                                 </tr>
                                  @foreach($promotion as $promotion1)
                                         <tr role="row " class="odd ">
+                                            <td style="display:none">{{$promotion1->id_promotion}}</td>
                                             <td>{{$promotion1->code_promotion}}</td>
-                                            <td>{{$promotion1->sale}}%</td>
+                                            <td>{{$promotion1->sale}}</td>
                                             <td>{{$promotion1->from_date}}</td>
                                             <td>{{$promotion1->to_date}}</td>
                                             <td>
