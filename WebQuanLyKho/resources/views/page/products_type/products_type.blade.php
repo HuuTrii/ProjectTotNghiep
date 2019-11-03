@@ -145,14 +145,18 @@
                                             </td>
 
                                         </tr>
+                                        
                                     @endforeach
+                                    
                             <tfoot>
                                 <tr>
                                     <th rowspan="1 " colspan="1 ">Tên Loại</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 200x;">Tương tác</th>
-
+                                    <th>{{$catalog->links()}}</th>{{--đây là phân trang--}}
                                 </tr>
+                                <tr> </tr>
                             </tfoot>
+                           
                         </table>
 
                     </div>

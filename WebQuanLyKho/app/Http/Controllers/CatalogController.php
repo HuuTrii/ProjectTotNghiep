@@ -18,8 +18,9 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        $Catalogs = Catalog::all();
+        // $Catalogs = Catalog::all();
 
+        $Catalogs = DB::table('catalogs')->paginate(5);
         return view('page.products_type.products_type')->with('catalog', $Catalogs);
     }
         public function cata_list()
