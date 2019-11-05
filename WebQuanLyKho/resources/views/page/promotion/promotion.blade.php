@@ -5,18 +5,27 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Đơn vị
+            Khuyến mãi
         </h1>
         <ol class="breadcrumb">
+<<<<<<< HEAD
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-folder"></i> Quản lý</a></li>
             <li class="breadcrumb-item"><a href="#">Đơn Vị</a></li>
+=======
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Quản lý</a></li>
+            <li class="breadcrumb-item"><a href="#">Khuyến mãi</a></li>
+>>>>>>> duantotnghiep_ai
         </ol>
     </section>
     <section class="content">
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">Khuyến mãi</h3>
+<<<<<<< HEAD
                 <h6 class="box-subtitle">Danh sách các khuyến mãi hiện có</h6>
+=======
+                <h6 class="box-subtitle">Danh Sách</h6>
+>>>>>>> duantotnghiep_ai
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -26,6 +35,7 @@
                              <button type="button" class="btn btn-app btn-success" data-toggle="modal" data-target="#modaladd" style="height: 30px;padding: 0;border-radius: 6px;">
                                    <span style="font-size: 35px;padding: 0px;line-height: 30px;">+</span>
                             </button>
+<<<<<<< HEAD
                             <a href="catalog/export">   
                                 <button type="button" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
                                             <span style="font-size: 20px;">
@@ -180,6 +190,101 @@
                                         </div>
                                     </div>
                                     <!-- modal edit promotion -->
+=======
+                         <!-- botton add -->
+                        <a href="promotion/export"><button type="button" class="btn btn-success"  style="height: 30px;padding: 0;border-radius: 6px;">
+                                <span style="font-size: 35px;padding: 0px;line-height: 30px;">&#8595;</span>
+                            </button></a>
+                        <!-- botton add -->
+                        <form action="{{route('importPromotion')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="file_import" class="form-control">
+                            <button class="btn btn-success">Import</button>
+                        </form>
+<!-- modal add promotion -->
+<div class="modal fade bs-example-modal-lg" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+    <form id="addform" method="POST">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Thêm Khuyến mãi</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                {{csrf_field()}}
+                        <div class="form-group">
+                            <label>Mã khuyến mãi</label>
+                            <input name="code_promotion"  type="text" placeholder="Mã" class="form-control">
+                         </div>
+                         <div class="form-group">
+                            <label>Giảm giá</label>
+                            <input name="sale"  type="number" placeholder="Giảm giá" class="form-control">
+                         </div>
+                         <div class="form-group">
+                            <label>Từ ngày</label>
+                            <input name="from_date"  type="text" placeholder="2019-10-10" class="form-control">
+                         </div>
+                         <div class="form-group">
+                            <label>Đến hết ngày</label>
+                            <input name="to_date"  type="text" placeholder="2019-10-10" class="form-control">
+                         </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="submit" class="btn btn-bold btn-pure btn-success float-right">Lưu</button>
+            </div>
+        </div>
+    </form>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- modal add promotion -->
+
+
+<!-- Modal edit promotion -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="editform" >
+                <div class="modal-body">
+                    {{csrf_field()}}
+                    {{method_field('PUT')}}
+                    <input type="hidden" name="id" id="id">
+                    <div class="form-group">
+                        <label>Mã Khuyến mãi</label>
+                        <input type="text" class="form-control" name="code_promotion" id="code_promotion" placeholder="Mã Khuyến mãi">
+                    </div>
+                    <div class="form-group">
+                        <label>Giảm giá</label>
+                        <input type="number" class="form-control" name="sale" id="sale" placeholder="Giảm giá">
+                    </div>
+                    <div class="form-group">
+                        <label>Từ ngày</label>
+                        <input type="text" class="form-control" name="from_date" id="from_date" placeholder="Từ ngày">
+                    </div>
+                    <div class="form-group">
+                        <label>Đến ngày</label>
+                        <input type="text" class="form-control" name="to_date" id="to_date" placeholder="Đến ngày">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Updated</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- modal edit promotion -->
+>>>>>>> duantotnghiep_ai
                         <table id="data_promotion" class="table table-bordered table-hover display nowrap margin-top-10 w-p100 dataTable" role="grid" aria-describedby="example_info">
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Mã khuyến mãi</th>
@@ -204,11 +309,17 @@
                                     @endforeach
                             <tfoot>
                                 <tr>
+<<<<<<< HEAD
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Mã khuyến mãi</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Mức khuyến mãi</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Từ ngày</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Đến ngày</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 20%;">Tương tác</th>
+=======
+                                    <th rowspan="1 " colspan="1 "> Khuyến Mãi</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 200x;">Tương tác</th>
+
+>>>>>>> duantotnghiep_ai
                                 </tr>
                             </tfoot>
                         </table>

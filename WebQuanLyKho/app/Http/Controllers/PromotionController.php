@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Exports\PromotionsExport;
-use App\Imports\PromotionsImport;
+use App\Exports\PromotionExport;
+use App\Imports\PromotionImport;
 use App\Models\Promotion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -102,10 +102,10 @@ class PromotionController extends Controller
         $Promotion->delete();
         return redirect('promotion');
     }
-
+    
     // IM EX SEARCH
 
-
+    
     public function export_promotion()
     {
         return Excel::download(new PromotionsExport(), 'promotion.xlsx');

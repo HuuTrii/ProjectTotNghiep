@@ -97,15 +97,22 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+
+    public function destroy($id)
+
     {
         $Vendors = Vendor::find($id);
         $Vendors->delete();
         return redirect('vendor');
     }
 
-
     // IM EX SEARCH
+
+
+    public function export_vendor()
+    {
+        return Excel::download(new VendorsExport(), 'vendor.xlsx');
+    }
 
     public function search_vendor(Request $request)
     {

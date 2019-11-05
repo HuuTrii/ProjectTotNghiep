@@ -1,7 +1,7 @@
 
     @extends('layout.master')
     @section('content_products')
-    
+
 
         <div class="content-wrapper">
             <section class="content-header">
@@ -30,6 +30,7 @@
                                         </button> -->
                                       <!-- button add -->
                                       <!-- button export excel -->
+<<<<<<< HEAD
                                         <a href="catalog/export">   
                                             <button type="button" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
                                                         <span style="font-size: 20px;">
@@ -49,6 +50,15 @@
                                                             <i class="fa  fa-edit (alias)"></i>
                                             </button>  
                                              <!-- edit button -->   
+=======
+                                        <button type="button" class="btn btn-app btn-success" style="height: 30px;padding: 0;border-radius: 6px;">
+                                            <span style="font-size: 20px;">
+                                                <i class="mdi mdi-file-excel"></i>
+                                            </span>
+
+                                       </button>
+                                     <!-- button export excel -->
+>>>>>>> duantotnghiep_ai
 
 
 

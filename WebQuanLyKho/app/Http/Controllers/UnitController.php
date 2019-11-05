@@ -74,7 +74,7 @@ class UnitController extends Controller
     public function edit(Unit $id_unit)
     {
         $Units = Unit::find($id_unit)->firt();
-        return view('page.unit.unit')->with('unit',$Unit);
+        return view('page.unit.unit')->with('unit',$Units);
     }
 
     /**

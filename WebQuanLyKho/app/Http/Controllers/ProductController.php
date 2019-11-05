@@ -25,7 +25,10 @@ class ProductController extends Controller
     }
     public function get_catalog(){
         $Catalogs = Catalog::all();
-        return view('page.products.products',compact('Catalogs'));
+        $Units = Unit::all();
+        $Vendors = Vendor::all();
+        $Promotions = Promotion::all();
+        return view('page.products.products',compact('Catalogs'),compact('Units'),compact('Vendors'),compact('Promotions'));
     }
 
 
@@ -60,7 +63,7 @@ class ProductController extends Controller
         $Products->quantity = $request->input('quantity');
 
         $Products->save();
-       
+
     }
 
     /**
@@ -71,8 +74,8 @@ class ProductController extends Controller
      */
     public function show(Product $id_pro)
     {
-        
-      
+
+
     }
 
     /**
@@ -84,9 +87,11 @@ class ProductController extends Controller
     public function edit(Product $id_pro)
     {
         $Catalogs = Catalog::all();
-
+        $Units = Unit::all();
+        $Vendors = Vendor::all();
+        $Promotions = Promotion::all();
         $Products = Product::find($id_pro)->first();
-        return view('page.products.products',['product' => $Products,'catalog' =>$Catalogs]);
+        return view('page.products.products',['product' => $Products,'catalog' =>$Catalogs],['unit' => $Units,'unit' =>$Units],['vendor' => $Vendors,'vendor' =>$Vendors],['promotion' => $Promotions,'promotion' =>$Promotions]);
     }
 
     /**
@@ -109,9 +114,9 @@ class ProductController extends Controller
         $Products->price = $request->input('price');
         $Products->quantity = $request->input('quantity');
 
-        
+
         $Products->save();
-      
+
     }
 
     /**
@@ -127,11 +132,11 @@ class ProductController extends Controller
         return redirect('products');
     }
 
-    
+
 
     /// import export search
 
-    
+
     public function export_product()
     {
         return Excel::download(new ProductsExport(), 'products.xlsx');

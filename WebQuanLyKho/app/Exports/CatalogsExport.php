@@ -16,11 +16,11 @@ class CatalogsExport implements FromCollection,WithHeadings
     }
     public function headings():array
     {
-        return [
+        return  [
             'id_cata',
             'name_cata',
             'created at',
             'updated at'
-        ];
+       ];
     }
 }
