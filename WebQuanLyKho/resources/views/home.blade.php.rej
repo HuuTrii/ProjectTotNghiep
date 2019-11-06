@@ -1,0 +1,10 @@
+diff a/WebQuanLyKho/resources/views/home.blade.php b/WebQuanLyKho/resources/views/home.blade.php	(rejected hunks)
+@@ -13,7 +13,7 @@
+                             {{ session('status') }}
+                         </div>
+                     @endif
+-
++{{-- ahihi --}}
+                     You are logged in!
+                 </div>
+             </div>
